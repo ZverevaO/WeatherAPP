@@ -16,6 +16,9 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -111,6 +114,12 @@ class ViewController: UIViewController {
         alert.addAction(action)
         // Показываем UIAlertController
         present(alert, animated: true)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+//       loginButton.layer.cornerRadius = 3
     }
 }
 

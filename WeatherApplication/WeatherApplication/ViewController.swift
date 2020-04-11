@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     
+    @IBOutlet var loginView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -121,5 +123,6 @@ class ViewController: UIViewController {
         // Initialization code
 //       loginButton.layer.cornerRadius = 3
     }
+
 }
 

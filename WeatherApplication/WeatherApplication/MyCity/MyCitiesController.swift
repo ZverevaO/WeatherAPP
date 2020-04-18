@@ -10,7 +10,7 @@ import UIKit
 
 class MyCitiesController: UITableViewController {
 
-    var myCities = [String]()
+    var myCities = [CitiesAll]()
     
     @IBAction func addCity(segue: UIStoryboardSegue) {
         
@@ -37,9 +37,13 @@ class MyCitiesController: UITableViewController {
 
     }
 
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "мои города"
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -69,7 +73,8 @@ class MyCitiesController: UITableViewController {
         let city = myCities[indexPath.row]
         
         // Устанавливаем город в надпись ячейки
-        cell.myCityName.text = city
+        cell.myCityName.text = city.name
+        cell.MyCityView.image.image = UIImage(named: city.icon)
         
         return cell
     }

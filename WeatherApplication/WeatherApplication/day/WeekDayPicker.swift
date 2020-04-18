@@ -57,7 +57,7 @@ class WeekDayPicker: UIControl {
     }
     
     @objc private func selectDay(_ sender: UIButton) {
-        guard let index = self.buttons.index(of: sender) else { return }
+        guard let index = self.buttons.firstIndex(of: sender) else { return }
         guard let day = Day(rawValue: index) else { return }
         self.selectedDay = day
     }

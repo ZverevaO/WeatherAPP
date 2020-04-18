@@ -21,6 +21,9 @@
 		D71A0706243893FC004DAA58 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71A0705243893FC004DAA58 /* GradientView.swift */; };
 		D75763AD2441CF8B0065E684 /* day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763AC2441CF8B0065E684 /* day.swift */; };
 		D75763AF2441D3410065E684 /* WeekDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763AE2441D3410065E684 /* WeekDayPicker.swift */; };
+		D75763B724421DCC0065E684 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763B624421DCC0065E684 /* CircleImage.swift */; };
+		D75763BC2442223C0065E684 /* CityAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763BB2442223C0065E684 /* CityAll.swift */; };
+		D75763BE24424C080065E684 /* WeatherCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75763BD24424C080065E684 /* WeatherCollectionViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		D71A0705243893FC004DAA58 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D75763AC2441CF8B0065E684 /* day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = day.swift; sourceTree = "<group>"; };
 		D75763AE2441D3410065E684 /* WeekDayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayPicker.swift; sourceTree = "<group>"; };
+		D75763B624421DCC0065E684 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		D75763BB2442223C0065E684 /* CityAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAll.swift; sourceTree = "<group>"; };
+		D75763BD24424C080065E684 /* WeatherCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,8 @@
 		D71A06BD242E5340004DAA58 /* WeatherApplication */ = {
 			isa = PBXGroup;
 			children = (
+				D75763BA2442201D0065E684 /* City */,
+				D75763B524421D520065E684 /* UI */,
 				D75763AB2441CF740065E684 /* day */,
 				D71A06DE2434D57C004DAA58 /* Weather */,
 				D71A06D72433BDF0004DAA58 /* MyCity */,
@@ -110,6 +118,7 @@
 			children = (
 				D71A06E32434E364004DAA58 /* WeatherViewController.swift */,
 				D71A06E52434E395004DAA58 /* WeatherCell.swift */,
+				D75763BD24424C080065E684 /* WeatherCollectionViewLayout.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -121,6 +130,22 @@
 				D75763AE2441D3410065E684 /* WeekDayPicker.swift */,
 			);
 			path = day;
+			sourceTree = "<group>";
+		};
+		D75763B524421D520065E684 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D75763B624421DCC0065E684 /* CircleImage.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		D75763BA2442201D0065E684 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				D75763BB2442223C0065E684 /* CityAll.swift */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,10 +220,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71A06DB2433BEA8004DAA58 /* MyCitiesCell.swift in Sources */,
+				D75763BE24424C080065E684 /* WeatherCollectionViewLayout.swift in Sources */,
+				D75763BC2442223C0065E684 /* CityAll.swift in Sources */,
 				D71A06D62433B665004DAA58 /* AllCitiesCell.swift in Sources */,
 				D71A06C3242E5340004DAA58 /* ViewController.swift in Sources */,
 				D75763AF2441D3410065E684 /* WeekDayPicker.swift in Sources */,
 				D71A06BF242E5340004DAA58 /* AppDelegate.swift in Sources */,
+				D75763B724421DCC0065E684 /* CircleImage.swift in Sources */,
 				D71A06E62434E395004DAA58 /* WeatherCell.swift in Sources */,
 				D71A06E42434E364004DAA58 /* WeatherViewController.swift in Sources */,
 				D75763AD2441CF8B0065E684 /* day.swift in Sources */,

@@ -9,27 +9,16 @@
 import UIKit
 
 class AllCitiesController: UITableViewController {
-
-    var cities = [
-        "Moscow",
-        "Krasnoyarsk",
-        "London",
-        "Paris"
-    ]
-
+    
+    var cities: [CitiesAll] = [CitiesAll(name: "Moscow", icon: "moskow"),CitiesAll(name: "Krasnoyarsk", icon: "krasnoyarsk"), CitiesAll(name: "London", icon: "london"), CitiesAll(name: "Paris", icon: "paris")]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "все горда"
 
-      
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -53,8 +42,8 @@ class AllCitiesController: UITableViewController {
         let city = cities[indexPath.row]
         
         // Устанавливаем город в надпись ячейки
-        cell.cityName.text = city
-
+        cell.cityName.text = city.name
+        cell.CityView.image.image = UIImage(named: city.icon)
         return cell
 
     }

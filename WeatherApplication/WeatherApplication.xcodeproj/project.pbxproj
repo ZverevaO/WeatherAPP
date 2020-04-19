@@ -90,7 +90,6 @@
 				D71A06C7242E5342004DAA58 /* Assets.xcassets */,
 				D71A06C9242E5342004DAA58 /* LaunchScreen.storyboard */,
 				D71A06CC242E5342004DAA58 /* Info.plist */,
-				D71A0705243893FC004DAA58 /* GradientView.swift */,
 			);
 			path = WeatherApplication;
 			sourceTree = "<group>";
@@ -136,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				D75763B624421DCC0065E684 /* CircleImage.swift */,
+				D71A0705243893FC004DAA58 /* GradientView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";

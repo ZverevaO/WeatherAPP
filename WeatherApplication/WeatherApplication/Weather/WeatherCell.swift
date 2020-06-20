@@ -8,6 +8,14 @@
 
 import UIKit
 
+class CircleView: UIView {
+    override func layoutSubviews () {
+       super.layoutSubviews()
+        layer.cornerRadius = bounds.height / 2
+    }
+    
+}
+
 class WeatherCell: UICollectionViewCell {
     
     @IBOutlet weak var weather: UILabel!
@@ -16,30 +24,15 @@ class WeatherCell: UICollectionViewCell {
     
     @IBOutlet weak var time: UILabel!
     
-    @IBOutlet weak var containerView: UIView! {
-      
-        didSet {
-               self.containerView.clipsToBounds = true
-           }
-
+    @IBOutlet weak var containerView: UIView! 
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        containerView.layer.shadowColor = UIColor.black.cgColor
+        containerView.layer.shadowOpacity = 1.0
+        containerView.layer.shadowRadius = 20
     }
     
-    @IBOutlet weak var shadowView: UIView! {
-      
-        didSet {
-            self.shadowView.layer.shadowOffset = .zero
-            self.shadowView.layer.shadowOpacity = 0.75
-            self.shadowView.layer.shadowRadius = 6
-            self.shadowView.backgroundColor = .clear
-        }
-
-    }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.shadowView.layer.shadowPath = UIBezierPath(ovalIn: self.shadowView.bounds).cgPath
-        self.containerView.layer.cornerRadius = self.containerView.frame.width / 2
-    }
     
 }

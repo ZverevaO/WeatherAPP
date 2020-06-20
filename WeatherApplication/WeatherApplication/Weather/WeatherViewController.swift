@@ -10,46 +10,74 @@ import UIKit
 
 
 
-class WeatherViewController: UIViewController {
+
+class WeatherViewController: UICollectionViewController {
+    
+    var weathers = [Weather]()
+    let dateFormatter = DateFormatter()
+    let weatherService = WeatherService()
+
  
     
     @IBOutlet weak var weekDayPicker: WeekDayPicker!
     
     
     override func viewDidLoad() {
+        
+        
+        weatherService.loadWeatherData(city: "Moscow") {
+        
         super.viewDidLoad()
-    }
-}
-
-extension  WeatherViewController : UICollectionViewDataSource
-{
-  func numberOfSections(in collectionView: UICollectionView) -> Int
-  {
-      return 1
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      return 10
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-      
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
-      
-      cell.weather.text = "30 C"
-      cell.time.text = "01.04.2020 18:00"
-      
-      return cell
-  }
-}
-
-extension WeatherViewController : UICollectionViewDelegate
-{
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
         
     }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
+        return 1
+    }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return weathers.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCell", for: indexPath) as! WeatherCell
+        
+        let weather = weathers[indexPath.row]
+        cell.weather.text = "\(weather.temp) C"
+        dateFormatter.dateFormat = "dd.MM.yyyy HH.mm"
+        let date = Date(timeIntervalSince1970: weather.date)
+        let stringDate = dateFormatter.string(from: date)
+        cell.time.text = stringDate
+        
+        //cell.icon.image = UIImage(named: weather.weatherIcon)
+        
+        
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+    }
+        
+        func loadData() {
+                do {
+                    let realm = try Realm()
+                    
+                    let weathers = realm.objects(Weather.self).filter("city == %@", "Moscow")
+                    
+                    self.weathers = Array(weathers)
+                    
+                } catch {
+        // если произошла ошибка, выводим ее в консоль
+                    print(error)
+                }
+            }
 
 }
+
+
 
 extension WeatherViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
